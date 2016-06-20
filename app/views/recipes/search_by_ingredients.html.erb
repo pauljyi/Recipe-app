@@ -1,0 +1,20 @@
+<h1>Search For Recipes By Ingredients</h1><br>
+
+<form action='/recipes/search_by_ingredients' method='get'>
+  <label for="ingredient_search_input">Enter Ingredient Name:</label>
+  <input id="ingredient_search_input" type="text" name="search_string"/>
+  <input type="submit" value="Search"/>
+</form><br>
+
+<p><%= link_to 'Back', recipes_path %></p>
+
+<% if !@recipe.nil? %>
+  <% if !@recipe.empty? %>
+    <h3>Recipes found:</h3>
+    <% @recipe.each do |recipe| %>
+      <%= link_to recipe.title, recipe %><br>
+    <% end %>
+  <% else %>
+    <h3>No Recipes Found</h3>
+  <% end %>
+<% end %>

@@ -1,0 +1,116 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+html {
+  background-color: lightblue;
+}
+
+body {
+  background-color: transparent;
+  text-align: center;
+}
+
+ h1, h2 {
+   text-align: center;
+   font-family: cursive;
+ }
+
+ p {
+   font-family: fantasy;
+   text-align: center;
+   font-size: 16px;
+ }
+
+ div {
+   text-align: center;
+ }
+
+ form {
+   text-align: center;
+ }
+
+ th {
+   text-align: center;
+ }
+
+ td {
+   font-family: fantasy;
+   font-size: 16px;
+ }
+
+#landing {
+    font-family: fantasy;
+    text-align: center;
+    // color: white;
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+a {
+  color: black;
+  text-align: center;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  background-color: transparent;
+}
+
+ label {
+   font-family: fantasy;
+   font-size: 16px;
+ }
+
+.bold{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+ .image {
+  //  margin: auto;
+  //  width: 800px;
+  //  height: 500px;
+   background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg');
+   background-size: cover;
+   border: 1px solid black;
+   border-radius: 5px;
+ }
+
+ .carousel{
+     background: #2f4357;
+     margin-top: 20px;
+ }
+
+ .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    width: 80%;
+ }
+
+ .carousel .item img{
+     margin: 0 auto; /* Align slide image horizontally center */
+     height: 500px;
+ }
+ .bs-example{
+ 	margin: 20px;
+ }
+#recipe_image {
+  margin: auto;
+  padding-left: 112px;
+}

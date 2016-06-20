@@ -1,0 +1,73 @@
+<p id="notice"><%= notice %></p>
+
+<p><% if @recipe.image_file_name == nil %>
+    No Image
+  <% else %>
+    <%= image_tag @recipe.image.url(:large) %>
+  <% end %>
+</p>
+
+<p>
+  <strong class="bold">Title:</strong>
+  <%= @recipe.title %>
+</p>
+
+<p>
+  <strong class="bold">Author:</strong>
+  <%= @recipe.author %>
+</p>
+
+<p>
+  <strong class="bold">Ingredients:</strong>
+  <%= @recipe.ingredients %>
+</p>
+
+<p>
+  <strong class="bold">Instructions:</strong>
+  <%= @recipe.instructions %>
+</p>
+
+<p>
+  <strong class="bold">Tags:</strong>
+  <% @recipe.tags.each do |tag| %>
+    <%= tag.name %>,
+  <% end %>
+</p>
+
+<p>
+  <strong class="bold">Average Rating:</strong>
+  <% if @recipe.rating.length == 0 %>
+    <%= "Be the first to add a review" %>
+  <% else %>
+    <%= @recipe.average_rating.round(1) %>
+  <% end %>
+</p><br>
+
+<h3><strong>Add a Tag</strong></h3>
+<form action="/recipes/<%=@recipe.id%>/add_tag" method="post">
+  <div class="field">
+    <label for="tag_name">Tag Name</label><br>
+    <input type="text" name="tag[name]" id="tag_name" />
+  </div>
+  <div class="actions">
+    <input type="submit" name="commit" value="Add Tag" />
+  </div>
+</form><br>
+
+<h3><strong>Rate This Recipe</strong></h3>
+  <form action="/recipes/<%=@recipe.id%>" method="post">
+    <select class="form-control-static" name="rating_form" id="rating_form">
+      <option value="1">1 Star</option>
+      <option value="2">2 Star</option>
+      <option value="3">3 Star</option>
+      <option value="4">4 Star</option>
+      <option value="5">5 Star</option>
+    </select>
+    <input value="Submit Rating" type="submit"/><br><br>
+  </form>
+
+
+<div class="container">
+<p><%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%= link_to 'Back', recipes_path %></p>
+</div>
